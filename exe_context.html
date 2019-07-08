@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exe_context</title>
+    <script>
+        var color = "blue";
+        function t1() {
+            var anotherColor = "red";
+            function t2() {
+                var temColor = anotherColor;
+                anotherColor = color;
+                color = temColor;
+                alert(color+anotherColor+temColor); //作用域包括这三个
+            }
+            t2();
+            alert(color+anotherColor); //作用域包括这两个
+        }
+        t1() ;
+        alert(color); //作用域包括这一个
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
